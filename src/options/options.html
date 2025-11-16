@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Configurações - Gerador de Relatórios</title>
+    <link rel="stylesheet" href="options.css">
+</head> 
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Configurações</h1>
+            <p>Configure sua API Key e padronize suas informações</p>
+        </header>
+
+        <form id="configForm" class="form">
+            <div class="form-group">
+                <label for="apiKey">API Key:</label>
+                <input type="password" id="apiKey" placeholder="Digite sua API Key" required>
+                <div class="help-text">
+                    Obtenha aqui a sua API key: 
+                    <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="turma">Turma Padrão:</label>
+                <input type="text" id="turma" placeholder="Ex: INFANTIL V-A">
+            </div>
+
+            <div class="form-group">
+                <label for="idade">Idade Padrão:</label>
+                <input type="text" id="idade" placeholder="Ex: 5 ANOS">
+            </div>
+
+            <div class="form-group">
+                <label for="professora">Nome da Professora:</label>
+                <input type="text" id="professora" placeholder="Ex: TIA MILVIA">
+            </div>
+
+            <div class="form-group">
+                <label for="periodoPadrao">Período Padrão:</label>
+                <select id="periodoPadrao">
+                    <option value="1º BIMESTRE">1º Bimestre</option>
+                    <option value="2º BIMESTRE">2º Bimestre</option>
+                    <option value="3º BIMESTRE" selected>3º Bimestre</option>
+                    <option value="4º BIMESTRE">4º Bimestre</option>
+                    <option value="1º TRIMESTRE">1º Trimestre</option>
+                    <option value="2º TRIMESTRE">2º Trimestre</option>
+                    <option value="3º TRIMESTRE">3º Trimestre</option>
+                    <option value="1º SEMESTRE">1º Semestre</option>
+                    <option value="2º SEMESTRE">2º Semestre</option>
+                    <option value="RELATÓRIO ANUAL">Relatório Anual</option>
+                    <option value="RELATÓRIO PARCIAL">Relatório Parcial</option>
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Salvar Configurações</button>
+                <button type="button" id="testarBtn" class="btn-secondary">Testar API Key</button>
+            </div>
+        </form>
+
+        <div id="status" class="status hidden"></div>
+    </div>
+
+    <link rel="stylesheet" href="options.css">
+    <script src="options.js"></script>
+</body>
+</html>
