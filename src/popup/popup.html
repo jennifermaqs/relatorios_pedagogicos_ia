@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Relatórios Pedagógicos</h1>
+            <p class="subtitle">Transforme suas anotações em relatórios formais</p>
+        </header>
+
+        <form id="relatorioForm" class="form">
+            <div class="form-group">
+                <label for="nomeAluno">Nome do Aluno:</label>
+                <input type="text" id="nomeAluno" placeholder="Digite o nome completo do aluno" required>
+            </div>
+
+            <div class="form-group">
+                <label for="periodo">Período:</label>
+                <select id="periodo" required>
+                    <option value="1º BIMESTRE">1º Bimestre</option>
+                    <option value="2º BIMESTRE">2º Bimestre</option>
+                    <option value="3º BIMESTRE" selected>3º Bimestre</option>
+                    <option value="4º BIMESTRE">4º Bimestre</option>
+                    <option value="1º TRIMESTRE">1º Trimestre</option>
+                    <option value="2º TRIMESTRE">2º Trimestre</option>
+                    <option value="3º TRIMESTRE">3º Trimestre</option>
+                    <option value="1º SEMESTRE">1º Semestre</option>
+                    <option value="2º SEMESTRE">2º Semestre</option>
+                    <option value="RELATÓRIO ANUAL">Relatório Anual</option>
+                    <option value="RELATÓRIO PARCIAL">Relatório Parcial</option>
+                    <option value="outro">Outro (personalizar)</option>
+                </select>
+                <input type="text" id="periodoPersonalizado" placeholder="Digite o período personalizado" class="hidden">
+            </div>
+
+            <div class="form-group">
+                <label for="turma">Turma:</label>
+                <input type="text" id="turma" placeholder="Deixe em branco para usar o padrão">
+            </div>
+
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="text" id="idade" placeholder="Deixe em branco para usar o padrão">
+            </div>
+
+            <div class="form-group">
+                <label for="professora">Professor(a):</label>
+                <input type="text" id="professora" placeholder="Deixe em branco para usar o padrão">
+            </div>
+
+            <div class="form-group">
+                <label for="anotacoes">Anotações do docente:</label>
+                <textarea id="anotacoes" placeholder="Descreva as observações, comportamentos, conquistas e aspectos relevantes do aluno..." rows="5" required></textarea>
+            </div>
+
+            <button type="submit" id="gerarBtn" class="btn-primary">
+                Gerar Relatório
+            </button>
+        </form>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <span>Gerando relatório...</span>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="relatorioSection" class="relatorio-section hidden">
+            <div class="section-header">
+                <h2>Relatório Gerado</h2>
+                <button id="copiarBtn" class="btn-secondary">Copiar Texto</button>
+            </div>
+            <div class="relatorio-content">
+                <pre id="relatorioTexto"></pre>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <a href="#" id="configBtn">Configurações</a>
+        </footer>
+    </div>
+
+    <link rel="stylesheet" href="popup.css">
+    <script src="popup.js"></script>
+
+</body>
+</html>

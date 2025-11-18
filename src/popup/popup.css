@@ -1,0 +1,25 @@
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    background-color: white;
+    cursor: pointer;
+} 
+
+select:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+#periodoPersonalizado {
+    margin-top: 8px;
+}
+
+input::placeholder {
+    color: #888;
+    font-style: italic;
+}

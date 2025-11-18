@@ -21,13 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function carregarConfiguracoes() {
         try {
-            const result = await chrome.storage.sync.get([
-                'apiKey',
-                'turma',
-                'idade',
-                'professora',
-                'periodoPadrao'
-            ]);
+            const result = await chrome.storage.sync.get(['apiKey', 'turma', 'idade', 'professora', 'periodoPadrao']);
 
             if (result.apiKey) {
                 apiKeyInput.value = result.apiKey;
@@ -66,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             await chrome.storage.sync.set(config);
-            mostrarStatus('Configurações salvas!', 'success');
+            mostrarStatus('Configurações salvas com sucesso!', 'success');
         } catch (error) {
             console.error('Erro ao salvar configurações:', error);
             mostrarStatus('Erro ao salvar configurações', 'error');
@@ -77,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const apiKey = apiKeyInput.value.trim();
     
     if (!apiKey) {
-        mostrarStatus('Digite sua API Key para testar', 'error');
+        mostrarStatus('Digite uma API Key para testar', 'error');
         return;
     }
 
@@ -94,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
             body: JSON.stringify({
                 contents: [{
                     parts: [{
-                        text: 'Teste de conexão, responda apenas com "ok" se estiver funcionando'
+                        text: 'Teste de conexão, responda apenas com "OK" se estiver funcionando'
                     }]
                 }]
             })
@@ -124,30 +118,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
-    async function salvarConfiguracoes() {
-    const config = {
-        apiKey: apiKeyInput.value.trim(),
-        turma: turmaInput.value.trim(),
-        idade: idadeInput.value.trim(),
-        professora: professoraInput.value.trim(),
-        periodoPadrao: periodoPadraoSelect.value
-    };
-
-    if (!config.apiKey) {
-        mostrarStatus('A API Key é obrigatória', 'error');
-        return;
-    }
-
-    try {
-        await chrome.storage.sync.set(config);
-        
-        const saved = await chrome.storage.sync.get(['apiKey']);
-        console.log('API Key salva:', saved.apiKey ? '✅ Sim' : '❌ Não');
-        
-        mostrarStatus('Configurações salvas!', 'success');
-    } catch (error) {
-        console.error('Erro ao salvar configurações:', error);
-        mostrarStatus('Erro ao salvar configurações', 'error');
-    }
-}
 });
