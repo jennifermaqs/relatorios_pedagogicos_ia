@@ -47,3 +47,6 @@ Para que a extensão funcione, é necessário obter uma chave de API gratuita do
 3.  Na extensão, clique com o botão direito no ícone e vá em **Opções** (ou clique no botão de engrenagem na interface).
 4.  Cole sua chave no campo "API Key" e clique em **Salvar Configurações**.
 5.  Você pode clicar em "Testar API Key" para garantir que a conexão está funcionando.
+
+
+**Desenvolvido para auxiliar educadores** 🍎
